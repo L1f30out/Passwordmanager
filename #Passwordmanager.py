@@ -20,11 +20,12 @@ print("Welcome to Passwordmanager.")
 
 passwords = {}
 def generate_password():
+    passlen = int(input('Enter the length of the password: '))
+    addsymbols = input("Do you want to add special symbols? (y/n)")
     s = string.ascii_letters + string.digits
-    symbol = string.punctuation
-    s += symbol
-    for i in range(16):
-        password = "".join(random.sample(s, 16))
+    if addsymbols == "y":
+        s += string.punctuation
+    password = "".join(random.sample(s, passlen))
     return password    
 
 
